@@ -1,0 +1,18 @@
+width = int(input('Please input width: '))
+
+price_width = 10
+item_width = width - price_width
+
+header_format = '{{:{}}}{{:>{}}}'.format(item_width, price_width)
+fmt = '{{:{}}}{{:{}.2f}}'.format(item_width, price_width)
+
+print('-'*width)
+print(header_format.format('Item', 'Price'))
+
+print('-'*width)
+print(fmt.format(name, 0.4))
+print(fmt.format('Banana', 0.2))
+print(fmt.format('Book', 0.52))
+print(fmt.format('Milk', 0.12))
+
+print('-'*width)
