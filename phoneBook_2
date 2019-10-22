@@ -1,0 +1,35 @@
+# used for searching one's phone or address
+
+# make a dictionary ,first key is name, second key is 'phone' or'addr'
+phoneBook = {
+    'alvin':
+        {
+            'phone': '0311',
+            'addr': "Shanxi xian shi"
+        },
+    'banana':
+        {
+            'phone': '1234',
+            'addr': 'nowhere'
+        },
+    'clearLove':
+        {
+            'phone': '34345',
+            'addr': 'in your heart'
+        }
+}
+
+# 输入名字及所需查询内容进行查询
+name = input("Which people do you want to search for:")
+request = input("Please inout phone(p) or address(a):")
+
+key = request
+if request == 'p':
+    key = 'phone'
+if request == 'a':
+    key = 'addr'
+
+people = phoneBook.get(name, {})
+result = people.get(key, 'not available')
+
+print('{}\'s {} is {}'.format(name, key, result))
